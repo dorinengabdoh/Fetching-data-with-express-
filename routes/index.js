@@ -20,11 +20,11 @@ router.get('/:id', async function (req, res, next){
   for (const {reason} of results) if (reason) console.log(reason);
   const [bicycle, brand] = results.map(({ value }) => value);
   if (bicycle && brand) {
-    // res.setHeader('content-type', "application/json");
+    res.setHeader('content-type', "application/json");
     res.send({
       id: bicycle.id,
       color: bicycle.color,
-      // brand: brand.name,
+      brand: brand.name,
     })
   }
 })
